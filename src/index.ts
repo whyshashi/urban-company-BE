@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import cors from "cors";
 import usersRouter from "./routes/userRoutes.js";
 import bookingRouter from "./routes/bookingRoutes.js";
 import serviceRouter from "./routes/servicesRoute.js";
@@ -8,6 +9,9 @@ import serviceRouter from "./routes/servicesRoute.js";
 // Load environment variables
 dotenv.config();
 const app = express();
+
+// CORS configuration
+app.use(cors());
 
 app.use(bodyParser.json());
 
